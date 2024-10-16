@@ -32,4 +32,15 @@ for (let i = 0; i < btnsOpenModal.length; i++)
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
 
-//response
+//response to keypress events etc..
+// global events or keyboard events
+
+document.addEventListener('keydown', function (key) {
+  if (key.key === 'Escape') {
+    // if the 'escape' key was press and
+    if (!modal.classList.contains('hidden')) {
+      // if the modal does not contain the 'hidden' class
+      closeModal(); // then call this function to close the modal.
+    }
+  }
+});
